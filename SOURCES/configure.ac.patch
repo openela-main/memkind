@@ -1,0 +1,13 @@
+diff --git a/configure.ac b/configure.ac
+index 0659008..43f79d8 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -136,7 +136,7 @@ fi
+ [enable_secure="1"]
+ )
+ if test "x$enable_secure" = "x1" ; then
+-  CFLAGS="$CFLAGS -fstack-protector"
++  CFLAGS="$CFLAGS -fstack-protector-strong -fstack-clash-protection"
+   LDFLAGS="$LDFLAGS -Wl,-z,relro,-z,now"
+
+   if test "$CFLAGS" != "${CFLAGS%-O0*}" ; then # if CFLAGS contains -O0
